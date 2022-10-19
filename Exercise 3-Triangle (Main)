@@ -1,15 +1,30 @@
+package Chapter4;
+
 public class Triangle {
     private double side1;
     private double side2;
     private double side3;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Triangle t1 = new Triangle(3, 4, 8);
         Triangle t2 = new Triangle(3, 4, 5);
         Triangle t3 = new Triangle(1, 5, 1);
-        System.out.println(t1.checkSides());
-        System.out.println(t2.checkSides());
-        System.out.println(t3.checkSides());
+        try{
+            System.out.println(t1.checkSides());
+        }catch(IllegalTriangleSideException e) {
+            System.out.println(e);
+        }
+        try{
+            System.out.println(t2.checkSides());
+        }catch(IllegalTriangleSideException e) {
+            System.out.println(e);
+        }
+        try{
+            System.out.println(t3.checkSides());
+        }catch(IllegalTriangleSideException e) {
+            System.out.println(e);
+        }
+
     }
 
     public Triangle(double side1, double side2, double side3) {
@@ -23,7 +38,7 @@ public class Triangle {
             return true;
         }
         else {
-            return false;
+            throw new IllegalTriangleSideException();
         }
     }
 
