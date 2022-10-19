@@ -1,0 +1,6 @@
+public class IllegalTriangleSideException extends Exception{
+    public IllegalTriangleSideException() {
+        super("This is an Illegal Triangle Exception.");
+    }
+
+}
